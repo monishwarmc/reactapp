@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { Provider } from './Theme';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+test("mm", () => {
+  render(<Provider>
+    <App />
+  </Provider>);
+  const linkElement = screen.getByText("First Name");
   expect(linkElement).toBeInTheDocument();
 });

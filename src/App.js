@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { useTheme } from './Theme';
+import SignUp from './forms/SignUp';
+import { Switch } from './switch/Switch';
+import { User } from './User/User';
+
 
 function App() {
+  const { theme } = useTheme();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" 
+    style={{
+      backgroundColor: theme === "light" ? "white" : "blue",
+    }}
+    >
+      <Switch/>
+      <SignUp/>
+      <User/>
     </div>
   );
 }
